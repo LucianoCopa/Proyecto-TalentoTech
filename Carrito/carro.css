@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+  h1{
+    font-family: 'Sixtyfour', sans-serif;
+  }
+
+  /* .presentacion{
+    border: blue 2px solid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }*/
+
+  /*
+  .redes-sociales{
+    width: 100%;
+    height: 100px;
+    border: 2px red solid;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }*/
+  
+  
+
+  button{
+    border: none;
+    background-color: none;
+  }
+  .logos{
+    width: 50px;
+    height: 50px;
+    transition: ease-in-out 0.6s;
+  }
+  .logos:hover{
+    background-color: #111;
+    color: white;
+  }
+  
+
+
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+
+  
+  nav {
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background 0.3s ease;
+  }
+  
+  
+  
+  main {
+    flex: 1; /* Hacer que main ocupe el espacio restante */
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los productos se ajusten en filas */
+    gap: 20px;
+    justify-content: center; /* Centrar los productos horizontalmente */
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  section {
+    margin-bottom: 20px;
+  }
+  
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  section .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    grid-auto-rows: 500px;
+    gap: 20px;
+    justify-content: space-evenly;
+    justify-items: center;
+  }
+
+  .info {
+    text-align: initial;
+  }
+
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  ul {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+  }
+  li {
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  }
+  
+  li :hover {
+    animation: sh0 0.5s ease-in-out both;
+    background-color: #e0e0e0;
+  }
+  
+  .lupa1:hover::before {
+    width: 110%;
+  }
+  
+  .lupa1:hover {
+    color: #111;
+  }
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+  h1{
+    font-family: 'Sixtyfour', sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima igual al viewport */
+    margin: 0 auto;
+    max-width: 1500px;
+    background-color: #5397be;
+  }
+  /* .presentacion{
+    border: blue 2px solid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }*/
+
+  /*
+  .redes-sociales{
+    width: 100%;
+    height: 100px;
+    border: 2px red solid;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }*/
+  
+  
+
+  button{
+    border: none;
+    background-color: none;
+  }
+  .logos{
+    width: 50px;
+    height: 50px;
+    transition: ease-in-out 0.6s;
+  }
+  .logos:hover{
+    background-color: #111;
+    color: white;
+  }
+  
+
+
+
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  
+  nav {
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background 0.3s ease;
+  }
+  
+  section {
+    margin-bottom: 20px;
+  }
+  
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  section .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    grid-auto-rows: 500px;
+    gap: 20px;
+    justify-content: space-evenly;
+    justify-items: center;
+  }
+  
+
+  p{
+    text-align: initial;
+    font-family: fantasy;
+    color: white;
+  }
+
+  .info {
+    text-align: initial;
+  }
+
+  ul {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+  }
+  li {
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  }
+  
+  li :hover {
+    animation: sh0 0.5s ease-in-out both;
+    background-color: #e0e0e0;
+  }
+  
+  .lupa1:hover::before {
+    width: 110%;
+  }
+  
+  .lupa1:hover {
+    color: #111;
+  }
+
+  #lista-carrito{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 700px;
+        background: linear-gradient(145deg, #1f4068, #162447);
+        padding: 50px;
+        transition: 0.5s;
+        border: 2px solid rgba(0, 255, 242, 0.5);
+        border-radius: 15px;
+  }
+  #lista-carrito:hover{
+    padding: 40px;
+    box-shadow: 0px 0px 20px 3px black;
+  }
+  .contenedor-lista{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    justify-content: center;
+  }
+
+  button{
+    font-size: 15px;
+    padding: 10px;
+    transition: 0.5s;
+    }
+    button:hover{
+      background-color: crimson;
+      color: white;
+    }
+    .redes-footer{
+      font-size: 20px;
+    }
+
+    .cart-summary {
+      background: linear-gradient(145deg, #1f4068, #162447);
+      border-radius: 15px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+      padding: 20px 30px;
+      max-width: 400px;
+      text-align: center;
+      border: 2px solid rgba(0, 255, 242, 0.5);
+    }
+    
+    .cart-summary h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #00d4ff;
+    }
+    
+    .summary-details p {
+      display: flex;
+          justify-content: space-between;
+          font-size: 1rem;
+          margin: 10px 0;
+          color: white;
+    }
+    
+    .summary-details .total {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00ff88;
+      margin-bottom: 10px;
+    }
+    
+    .summary-details hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin: 15px 0;
+    }
+    
+    .checkout-btn {
+      background-color: #00d4ff;
+      color: #1a1a2e;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .checkout-btn:hover {
+      background-color: #00ff88;
+      color: #162447;
+      transform: scale(1.05);
+    }
