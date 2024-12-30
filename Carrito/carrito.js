@@ -1,9 +1,18 @@
 const listaCarrito = document.querySelector("#lista-carrito");
+const subtotalContainer = document.querySelector("#subtotal"); // Un contenedor para mostrar el subtotal
 const totalContainer = document.querySelector("#total"); // Un contenedor para mostrar el total
+const contadorCarrito = document.getElementById("contador-carrito");
+
 
 // Recupera los productos almacenados en LocalStorage
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+function actualizarContadorCarrito() {
+  contadorCarrito.textContent = carrito.length; // Muestra la cantidad actual de productos
+}
+
+// Actualizar el contador al cargar la página
+actualizarContadorCarrito();
 // Función para renderizar el carrito
 function renderizarCarrito() {
   listaCarrito.innerHTML = ""; // Limpia el contenido actual
@@ -11,7 +20,8 @@ function renderizarCarrito() {
   // Verifica si el carrito tiene productos
   if (carrito.length === 0) {
     listaCarrito.innerHTML = "<p>El carrito está vacío</p>";
-    totalContainer.innerText = "Total: $0"; // Muestra total vacío
+    subtotalContainer.innerText = "$0"; // Muestra total vacío
+    totalContainer.innerText = "Total: $0";
     return;
   }
 
@@ -25,6 +35,8 @@ function renderizarCarrito() {
     divProducCarrito.style.width = "100%";
     divProducCarrito.style.marginBottom = "15px";
     divProducCarrito.style.color = "white";
+    divProducCarrito.style.borderBottom = "2px solid";
+    divProducCarrito.style.borderTop = "2px solid";
 
     const img = document.createElement("img");
     img.src = producto.imagen;
@@ -48,6 +60,7 @@ function renderizarCarrito() {
     p.style.margin = "0";
 
     const button = document.createElement("button");
+    button.className = "eliminar-producto";
     button.innerText = "Eliminar";
     button.style.marginLeft = "auto";
 
@@ -55,6 +68,8 @@ function renderizarCarrito() {
     button.addEventListener("click", () => {
       eliminarProducto(index);
     });
+
+    actualizarContadorCarrito();
 
     textContainer.appendChild(li);
     textContainer.appendChild(p);
@@ -67,6 +82,7 @@ function renderizarCarrito() {
   });
 
   // Calcula y muestra el total
+  calcularSubTotal();
   calcularTotal();
 }
 
@@ -78,9 +94,14 @@ function eliminarProducto(index) {
 }
 
 // Función para calcular el precio total
-function calcularTotal() {
+function calcularSubTotal() {
   const total = carrito.reduce((sum, producto) => sum + producto.precio, 0); // Suma los precios
-  totalContainer.innerText = "Total: $" + total; // Muestra el total
+  subtotalContainer.innerText = "$" + total; // Muestra el total
+}
+function calcularTotal() {
+  const total1 = carrito.reduce((sum1, producto) => sum1 + producto.precio, 0); // Suma los precios
+  resultado = total1 + 500 - 100;
+  totalContainer.innerText ="Total: $" + resultado; // Muestra el total
 }
 
 // Renderiza el carrito al cargar la página
