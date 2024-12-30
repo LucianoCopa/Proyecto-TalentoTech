@@ -8,27 +8,6 @@
   h1{
     font-family: 'Sixtyfour', sans-serif;
   }
-
-  /* .presentacion{
-    border: blue 2px solid;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-  }*/
-
-  /*
-  .redes-sociales{
-    width: 100%;
-    height: 100px;
-    border: 2px red solid;
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-  }*/
-  
   
 
   button{
@@ -44,9 +23,6 @@
     background-color: #111;
     color: white;
   }
-  
-
-
   
   header {
     background-color: #333;
@@ -159,27 +135,7 @@
     max-width: 1500px;
     background-color: #5397be;
   }
-  /* .presentacion{
-    border: blue 2px solid;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-  }*/
 
-  /*
-  .redes-sociales{
-    width: 100%;
-    height: 100px;
-    border: 2px red solid;
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-  }*/
-  
-  
 
   button{
     border: none;
@@ -194,11 +150,7 @@
     background-color: #111;
     color: white;
   }
-  
-
-
-
-  
+ 
   header {
     background-color: #333;
     color: white;
@@ -365,4 +317,41 @@
       background-color: #00ff88;
       color: #162447;
       transform: scale(1.05);
+    }
+    .icono-carro {
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+    
+    .icono-carro:hover {
+      transform: scale(1.1);
+    }
+    .a-icono {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    
+    .icono {
+      font-size: 28px;
+      color: #00ffff; /* Color neón cian */
+      filter: drop-shadow(0 0 5px #00ffff);
+      transition: all 0.3s ease;
+    }
+    #contador-carrito {
+      background-color: #ff00ff;
+      color: white;
+      border-radius: 20%;
+      padding: 4px 8px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-left: 5px;
+      box-shadow: 0 0 10px #ff00ff;
+      transition: all 0.3s ease;
+      font-family: 'Sixtyfour', sans-serif;
+    }
+    
+    .icono-carro:hover #contador-carrito {
+      box-shadow: 0 0 15px #ff00ff;
+      animation: pulse 1.5s infinite;
     }

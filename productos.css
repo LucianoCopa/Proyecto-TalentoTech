@@ -1,0 +1,37 @@
+.icono-carro {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.icono-carro:hover {
+  transform: scale(1.1);
+}
+.a-icono {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.icono {
+  font-size: 28px;
+  color: #00ffff; /* Color neón cian */
+  filter: drop-shadow(0 0 5px #00ffff);
+  transition: all 0.3s ease;
+}
+#contador-carrito {
+  background-color: #ff00ff;
+  color: white;
+  border-radius: 20%;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 5px;
+  box-shadow: 0 0 10px #ff00ff;
+  transition: all 0.3s ease;
+  font-family: 'Sixtyfour', sans-serif;
+}
+
+.icono-carro:hover #contador-carrito {
+  box-shadow: 0 0 15px #ff00ff;
+  animation: pulse 1.5s infinite;
+}
