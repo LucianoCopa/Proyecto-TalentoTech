@@ -46,6 +46,11 @@ nav a {
   padding: 15px 10px;
   transition: all 0.3s ease;
 }
+nav a:hover{
+  background-color: rgb(26 77 211);
+  transition: 0.8s;
+  border-radius: 10px;
+}
 .btn-disminuir:hover{
   background-color: rgb(233, 74, 74);
   border: none;

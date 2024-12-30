@@ -84,7 +84,11 @@ nav a {
     text-decoration: none;
     padding: 15px 10px;
 }
-
+nav a:hover{
+    background-color: rgb(26 77 211);
+    transition: 0.8s;
+    border-radius: 10px;
+  }
 ul {
     display: flex;
     gap: 20px;
