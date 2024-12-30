@@ -46,7 +46,14 @@ nav a {
   padding: 15px 10px;
   transition: all 0.3s ease;
 }
-
+.btn-disminuir:hover{
+  background-color: rgb(233, 74, 74);
+  border: none;
+  }
+  .btn-aumentar:hover{
+    background-color: rgb(74, 233, 74);
+    border: none;
+  }
 
 main {
   flex: 1;

@@ -3,7 +3,6 @@ const subtotalContainer = document.querySelector("#subtotal"); // Un contenedor 
 const totalContainer = document.querySelector("#total"); // Un contenedor para mostrar el total
 const contadorCarrito = document.getElementById("contador-carrito");
 
-
 // Recupera los productos almacenados en LocalStorage
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -13,6 +12,7 @@ function actualizarContadorCarrito() {
 
 // Actualizar el contador al cargar la página
 actualizarContadorCarrito();
+
 // Función para renderizar el carrito
 function renderizarCarrito() {
   listaCarrito.innerHTML = ""; // Limpia el contenido actual
@@ -58,25 +58,63 @@ function renderizarCarrito() {
     const p = document.createElement("p");
     p.innerText = "$" + producto.precio;
     p.style.margin = "0";
+    p.style.color = "#0dff00";
+
+    const actionContainer = document.createElement("div");
+    actionContainer.style.display = "flex";
+    actionContainer.style.alignItems = "center";
+    actionContainer.style.gap = "10px";
+    actionContainer.style.marginLeft = "auto";
+
+    const cantidadContainer = document.createElement("div");
+    cantidadContainer.style.display = "flex";
+    cantidadContainer.style.alignItems = "center";
+    cantidadContainer.style.gap = "5px";
+
+    const btnDecrementar = document.createElement("button");
+    btnDecrementar.className = "btn-disminuir";
+    btnDecrementar.innerText = "-";
+    btnDecrementar.style.padding = "2px";
+    btnDecrementar.style.width = "35px";
+    btnDecrementar.style.fontSize = "20px";
+
+    btnDecrementar.addEventListener("click", () => decrementarCantidad(index));
+
+    const cantidad = document.createElement("span");
+    cantidad.innerText = producto.cantidad;
+    cantidad.style.margin = "0 10px";
+
+    const btnIncrementar = document.createElement("button");
+    btnIncrementar.className = "btn-aumentar";
+    btnIncrementar.innerText = "+";
+    btnIncrementar.style.padding = "2px";
+    btnIncrementar.style.width = "35px";
+    btnIncrementar.style.fontSize = "20px";
+
+    btnIncrementar.addEventListener("click", () => incrementarCantidad(index));
+
+    cantidadContainer.appendChild(btnDecrementar);
+    cantidadContainer.appendChild(cantidad);
+    cantidadContainer.appendChild(btnIncrementar);
 
     const button = document.createElement("button");
     button.className = "eliminar-producto";
     button.innerText = "Eliminar";
-    button.style.marginLeft = "auto";
 
     // Evento para eliminar el producto
-    button.addEventListener("click", () => {
-      eliminarProducto(index);
-    });
+    button.addEventListener("click", () => eliminarProducto(index));
 
     actualizarContadorCarrito();
 
     textContainer.appendChild(li);
     textContainer.appendChild(p);
 
+    actionContainer.appendChild(cantidadContainer);
+    actionContainer.appendChild(button);
+
     divProducCarrito.appendChild(img);
     divProducCarrito.appendChild(textContainer);
-    divProducCarrito.appendChild(button);
+    divProducCarrito.appendChild(actionContainer);
 
     listaCarrito.appendChild(divProducCarrito);
   });
@@ -93,15 +131,35 @@ function eliminarProducto(index) {
   renderizarCarrito(); // Vuelve a renderizar el carrito
 }
 
-// Función para calcular el precio total
-function calcularSubTotal() {
-  const total = carrito.reduce((sum, producto) => sum + producto.precio, 0); // Suma los precios
-  subtotalContainer.innerText = "$" + total; // Muestra el total
+// Función para incrementar la cantidad de un producto
+function incrementarCantidad(index) {
+  carrito[index].cantidad += 1;
+  localStorage.setItem("carrito", JSON.stringify(carrito)); // Actualiza el LocalStorage
+  renderizarCarrito(); // Vuelve a renderizar el carrito
 }
+
+// Función para decrementar la cantidad de un producto
+function decrementarCantidad(index) {
+  if (carrito[index].cantidad > 1) {
+    carrito[index].cantidad -= 1;
+    localStorage.setItem("carrito", JSON.stringify(carrito)); // Actualiza el LocalStorage
+  } else {
+    eliminarProducto(index);
+  }
+  renderizarCarrito(); // Vuelve a renderizar el carrito
+}
+
+// Función para calcular el precio subtotal
+function calcularSubTotal() {
+  const subtotal = carrito.reduce((sum, producto) => sum + producto.precio * producto.cantidad, 0); // Suma los precios
+  subtotalContainer.innerText = "$" + subtotal; // Muestra el subtotal
+}
+
+// Función para calcular el precio total
 function calcularTotal() {
-  const total1 = carrito.reduce((sum1, producto) => sum1 + producto.precio, 0); // Suma los precios
-  resultado = total1 + 500 - 100;
-  totalContainer.innerText ="Total: $" + resultado; // Muestra el total
+  const subtotal = carrito.reduce((sum, producto) => sum + producto.precio * producto.cantidad, 0); // Suma los precios
+  const total = subtotal + 500 - 100; // Agrega costos adicionales y descuentos
+  totalContainer.innerText = "Total: $" + total; // Muestra el total
 }
 
 // Renderiza el carrito al cargar la página
