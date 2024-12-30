@@ -1,24 +1,63 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 1500px;
+    background-color: #003f81;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+nav {
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .icono-carro {
     position: relative;
     transition: transform 0.3s ease;
-  }
-  
-  .icono-carro:hover {
+}
+
+.icono-carro:hover {
     transform: scale(1.1);
-  }
-  .a-icono {
+}
+
+.a-icono {
     display: flex;
     align-items: center;
     text-decoration: none;
-  }
-  
-  .icono {
+}
+
+.icono {
     font-size: 28px;
     color: #00ffff; /* Color neón cian */
     filter: drop-shadow(0 0 5px #00ffff);
     transition: all 0.3s ease;
-  }
-  #contador-carrito {
+}
+
+#contador-carrito {
     background-color: #ff00ff;
     color: white;
     border-radius: 20%;
@@ -29,9 +68,187 @@
     box-shadow: 0 0 10px #ff00ff;
     transition: all 0.3s ease;
     font-family: 'Sixtyfour', sans-serif;
-  }
-  
-  .icono-carro:hover #contador-carrito {
+}
+
+.icono-carro:hover #contador-carrito {
     box-shadow: 0 0 15px #ff00ff;
     animation: pulse 1.5s infinite;
-  }
+}
+
+h1 {
+    font-family: "Sixtyfour", sans-serif;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 10px;
+}
+
+ul {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+li {
+    font-size: 20px;
+}
+.redes{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: center;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Estilos del formulario */
+#contacto {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(20, 20, 50, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.datos-contacto1 {
+    text-align: center;
+    color: #00ffff;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+main {
+    flex: 1;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.label-form {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #00ffff;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #00ffff;
+    background-color: rgba(0, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+.lupa1 {
+    background-color: #00ffff;
+    color: #0c0c1d;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lupa1:hover {
+    background-color: #0c0c1d;
+    color: #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+/* Media queries para responsividad */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #contacto {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .datos-contacto1 {
+        font-size: 1.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 0.9rem;
+    }
+
+    .lupa1 {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #contacto {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+
+    .datos-contacto1 {
+        font-size: 1.2rem;
+    }
+
+    #formulario {
+        gap: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .lupa1 {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
