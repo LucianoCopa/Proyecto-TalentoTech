@@ -29,6 +29,7 @@ function renderizarCarrito() {
     const divProducCarrito = document.createElement("div");
     divProducCarrito.className = "listadd-carrito";
     divProducCarrito.style.display = "flex";
+    divProducCarrito.style.flexWrap = "wrap";
     divProducCarrito.style.flexDirection = "row";
     divProducCarrito.style.alignItems = "center";
     divProducCarrito.style.gap = "10px";
@@ -65,6 +66,7 @@ function renderizarCarrito() {
     actionContainer.style.alignItems = "center";
     actionContainer.style.gap = "10px";
     actionContainer.style.marginLeft = "auto";
+    actionContainer.style.flexWrap = "wrap";
 
     const cantidadContainer = document.createElement("div");
     cantidadContainer.style.display = "flex";
