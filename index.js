@@ -2,6 +2,14 @@
 //const listProductos = document.querySelector("#lista-productos");
 const grid = document.querySelector(".grid");
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+const contadorCarrito = document.getElementById("contador-carrito");
+
+function actualizarContadorCarrito() {
+  contadorCarrito.textContent = carrito.length; // Muestra la cantidad actual de productos
+}
+
+// Actualizar el contador al cargar la página
+actualizarContadorCarrito();
 if (!grid) {
   console.log("No se encontro contenedor");
 }
@@ -64,6 +72,8 @@ data.forEach(element => {
       
       localStorage.setItem("carrito", JSON.stringify(carrito));
       
+      actualizarContadorCarrito();
+
       alert(`Producto "${element.titulo}" agregado al carrito`);
       console.log("Carrito actualizado:", carrito);
     });
@@ -77,11 +87,10 @@ data.forEach(element => {
     grid.appendChild(listProductos);
     console.log(data);
 
-    //saveLocal()
-    //console.log(carrito[i]); 
 });
 
   }); 
 
 }
 
+   
