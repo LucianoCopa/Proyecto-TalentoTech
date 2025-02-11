@@ -1,6 +1,6 @@
 # E-Commerce de Insumos de Computación
 
-Este proyecto es una plataforma básica de e-commerce diseñada para la venta de insumos de computación. Ofrece una experiencia de usuario simple, organizada en secciones clave, y funcionalidades esenciales como agregar productos al carrito.
+Este proyecto es una plataforma de e-commerce diseñada para la venta de insumos de computación. Ofrece una experiencia de usuario simple, organizada en secciones clave, y funcionalidades esenciales como agregar productos al carrito.
 
 ## Objetivo del Proyecto
 Crear un sitio web intuitivo y atractivo para que los usuarios puedan:
