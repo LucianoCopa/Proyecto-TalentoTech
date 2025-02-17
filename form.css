@@ -11,7 +11,6 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0 auto;
-    max-width: 1500px;
     background-color: #003f81;
 }
 
@@ -21,6 +20,7 @@ header {
     padding: 20px;
     text-align: center;
 }
+
 html, body {
     height: 100%;
     margin: 0;
@@ -84,11 +84,11 @@ nav a {
     text-decoration: none;
     padding: 15px 10px;
 }
-nav a:hover{
+nav a:hover {
     background-color: rgb(26 77 211);
     transition: 0.8s;
     border-radius: 10px;
-  }
+}
 ul {
     display: flex;
     gap: 20px;
@@ -99,7 +99,8 @@ ul {
 li {
     font-size: 20px;
 }
-.redes{
+
+.redes {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -107,6 +108,7 @@ li {
     justify-content: center;
     align-content: center;
 }
+
 footer {
     background-color: #333;
     color: white;
@@ -142,14 +144,17 @@ footer {
     flex-direction: column;
     gap: 1.5rem;
 }
+
 main {
     flex: 1;
 }
+
 .main-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
+
 .label-form {
     display: block;
     margin-bottom: 0.5rem;

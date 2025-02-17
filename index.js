@@ -43,7 +43,7 @@
   if (!grid) {
     console.log("No se encontró el contenedor");
   } else {
-    fetch('https://apiprueba-production-4527.up.railway.app/productosApi/getAllProductos')
+    fetch('https://apiprueba-q7fb.onrender.com/productosApi/getAllProductos')
       .then(response => response.json())
       .then(data => {
         data.forEach(element => {
